@@ -12,7 +12,7 @@ const GitHubStrategy = require('passport-github').Strategy;
 
 dotenv.config();
 const app = express();
-mongoose.connect(`mongodb://pro2501:vendor777@cluster0-shard-00-00.pjqpy.mongodb.net:27017,cluster0-shard-00-01.pjqpy.mongodb.net:27017,cluster0-shard-00-02.pjqpy.mongodb.net:27017/oauth?ssl=true&replicaSet=atlas-xe6iz2-shard-0&authSource=admin&retryWrites=true&w=majority`, {
+mongoose.connect(`mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0-shard-00-00.pjqpy.mongodb.net:27017,cluster0-shard-00-01.pjqpy.mongodb.net:27017,cluster0-shard-00-02.pjqpy.mongodb.net:27017/oauth?ssl=true&replicaSet=atlas-xe6iz2-shard-0&authSource=admin&retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true 
 }, () => {
