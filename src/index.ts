@@ -21,7 +21,7 @@ mongoose.connect(`mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGOD
 
 //Middleware
 app.use(express.json());
-app.use(cors({origin: "http://localhost:3000", credentials: true}))
+app.use(cors({origin: "https://boring-stonebraker-dd5342.netlify.app", credentials: true}))
 
 app.set("trust proxy", 1)
 app.use(
@@ -82,7 +82,7 @@ app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('http://localhost:3000');
+    res.redirect('https://boring-stonebraker-dd5342.netlify.app');
   });
 
 // Twitter Strategy
@@ -142,7 +142,7 @@ app.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('http://localhost:3000');
+    res.redirect('https://boring-stonebraker-dd5342.netlify.app');
   });
 
 // End of Strategies
